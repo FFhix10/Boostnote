@@ -14,7 +14,9 @@
     "fix": "eslint . --fix",
     "lint": "eslint .",
     "dev": "cross-env NODE_ENV=development node dev-scripts/dev.js",
-    "watch": "webpack-dev-server --hot"
+    "watch": "webpack-dev-server --hot",
+    "prepare": "yarn run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "config": {
     "electron-version": "4.2.12"
@@ -80,7 +82,7 @@
     "js-yaml": "^3.13.1",
     "jsonlint-mod": "^1.7.4",
     "katex": "^0.10.1",
-    "lodash": "^4.17.19",
+    "lodash": "^4.17.20",
     "lodash-move": "^1.1.1",
     "markdown-it": "^6.0.1",
     "markdown-it-abbr": "^1.0.4",
@@ -126,7 +128,8 @@
     "turndown-plugin-gfm": "^1.0.2",
     "typo-js": "^1.0.3",
     "unique-slug": "2.0.0",
-    "uuid": "^3.2.1"
+    "uuid": "^3.2.1",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "ava": "^0.25.0",
@@ -161,7 +164,7 @@
     "eslint-plugin-react": "^7.8.2",
     "eslint-plugin-standard": "^3.0.1",
     "faker": "^3.1.0",
-    "grunt": "^0.4.5",
+    "grunt": "^1.0.3",
     "grunt-electron-installer": "2.1.0",
     "history": "^4.9.0",
     "husky": "^1.1.0",
@@ -218,5 +221,6 @@
     "hooks": {
       "pre-commit": "npm run lint"
     }
-  }
+  },
+  "snyk": true
 }
